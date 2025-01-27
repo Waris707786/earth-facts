@@ -3,100 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planet Earth Facts</title>
+    <title>E-Ticketing</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            font-family: Arial, sans-serif;
+            background: url('https://www.tusktravel.com/blog/wp-content/uploads/2023/02/Umaid-Bhawan-Palace-in-Jodhpur-Rajasthan.jpg') no-repeat center center fixed; /* Replace with your image URL */
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: backgroundAnimation 10s infinite alternate;
         }
 
-        #app {
-            max-width: 800px;
-            margin: 50px auto;
+        .container {
+            text-align: center;
+            color: white;
+            animation: fadeIn 2s;
+            background: rgba(0, 0, 0, 0.5);
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
 
         h1 {
-            text-align: center;
-            color: #007BFF;
+            font-size: 3em;
+            margin-bottom: 20px;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
+        p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
         }
 
-        li {
-            margin: 10px 0;
-            padding: 10px;
-            background-color: #e9ecef;
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
             border-radius: 5px;
+            cursor: pointer;
+            background-color: #ff6f61;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff4c3b;
+        }
+
+        select, input[type="date"] {
+            padding: 10px;
+            font-size: 1em;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                background: url("C:\Users\aliwa\OneDrive\Desktop\new e ticketing\jodhpur.jpeg") no-repeat center center fixed; /* Replace with your image URL */
+            }
+            100% {
+                background: url('https://1drv.ms/i/c/997cf0d79d589bd9/EZUJkbqLhYFPjgwnVojEz_IBiduZuOHAXrtgVsE2Cep10g?e=d3aDE2') no-repeat center center fixed; /* Replace with your image URL */
+            }
         }
     </style>
 </head>
 <body>
-    <div id="app">
-        <h1>Facts About Planet Earth</h1>
-        <ul id="facts-list"></ul>
+    <div class="container">
+        <h1>Welcome to E-Ticketing</h1>
+        <p>Book your tickets easily and quickly!</p>
+        
+        <label for="ticketType">Select Ticket Type:</label>
+        <select id="ticketType">
+            <option value="standard">Standard Ticket</option>
+            <option value="vip">VIP Ticket</option>
+            <option value="group">Group Ticket</option>
+        </select>
+
+        <label for="eventDate">Select Event Date:</label>
+        <input type="date" id="eventDate">
+
+        <h2>Train Details</h2>
+        <label for="trainOptions">Select Train:</label>
+        <select id="trainOptions">
+            <option value="train1">Express Train A - 10:00 AM</option>
+            <option value="train2">Intercity Train B - 12:00 PM</option>
+            <option value="train3">Regional Train C - 2:00 PM</option>
+            <option value="train4">High-Speed Train D - 3:30 PM</option>
+            <option value="train5">Night Train E - 11:00 PM</option>
+        </select>
+
+        <h2>Flight Details</h2>
+        <label for="flightOptions">Select Flight:</label>
+        <select id="flightOptions">
+            <option value="flight1">Flight X - 8:00 AM</option>
+            <option value="flight2">Flight Y - 1:00 PM</option>
+            <option value="flight3">Flight Z - 5:00 PM</option>
+            <option value="flight4">Flight A1 - 9:30 AM</option>
+            <option value="flight5">Flight B2 - 3:00 PM</option>
+        </select>
+
+        <button id="bookTicketBtn">Book Now</button>
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const facts = [
-                {
-                    fact: "Age",
-                    description: "Earth is approximately 4.54 billion years old, based on radiometric age dating of meteorite material and Earth rocks."
-                },
-                {
-                    fact: "Size and Shape",
-                    description: "Earth has a diameter of about 12,742 kilometers (7,918 miles) and is not a perfect sphere. It is an oblate spheroid, meaning it is slightly flattened at the poles and bulging at the equator."
-                },
-                {
-                    fact: "Water Coverage",
-                    description: "About 71% of Earth's surface is covered by water, with the vast majority being saltwater in the oceans. Only about 2.5% of Earth's water is freshwater."
-                },
-                {
-                    fact: "Atmosphere",
-                    description: "Earth's atmosphere is composed of 78% nitrogen, 21% oxygen, and trace amounts of other gases like argon and carbon dioxide. This composition is crucial for supporting life."
-                },
-                {
-                    fact: "Tectonic Plates",
-                    description: "Earth's crust is divided into several large and small tectonic plates that float on the semi-fluid asthenosphere beneath. Their movement causes earthquakes, volcanic activity, and the formation of mountains."
-                },
-                {
-                    fact: "Magnetic Field",
-                    description: "Earth has a strong magnetic field generated by the movement of molten iron in its outer core. This magnetic field protects the planet from harmful solar and cosmic radiation."
-                },
-                {
-                    fact: "Seasons",
-                    description: "Earth experiences four distinct seasons—spring, summer, autumn, and winter—due to its axial tilt of approximately 23.5 degrees relative to its orbit around the Sun."
-                },
-                {
-                    fact: "Moon",
-                    description: "Earth has one natural satellite, the Moon, which is the fifth largest moon in the solar system. The gravitational interaction between Earth and the Moon causes tides in Earth's oceans."
-                },
-                {
-                    fact: "Biodiversity",
-                    description: "Earth is home to millions of species of plants, animals, fungi, and microorganisms, making it the most biodiverse planet known. This biodiversity is crucial for ecosystem stability and human survival."
-                },
-                {
-                    fact: "Human Population",
-                    description: "As of 2023, Earth's human population is over 8 billion people. Humans have significantly impacted the planet's ecosystems and climate through activities such as deforestation, pollution, and greenhouse gas emissions."
-                }
-            ];
+        document.getElementById('bookTicketBtn').addEventListener('click', function() {
+            const ticketType = document.getElementById('ticketType').value;
+            const eventDate = document.getElementById('eventDate').value;
+            const train = document.getElementById('trainOptions').value;
+            const flight = document.getElementById('flightOptions').value;
 
-            const factsList = document.getElementById('facts-list');
+            if (!eventDate) {
+                alert('Please select an event date!');
+                return;
+            }
 
-            facts.forEach(item => {
-                const listItem = document.createElement('li');
-                listItem.innerHTML = `<strong>${item.fact}:</strong> ${item.description}`;
-                factsList.appendChild(listItem);
-            });
+            alert(`You have selected a ${ticketType} for the event on ${eventDate}.\nTrain: ${train}\nFlight: ${flight}\nTicket booking feature coming soon!`);
         });
     </script>
 </body>
 </html>
+
+
